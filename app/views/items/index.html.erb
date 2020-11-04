@@ -1,1 +1,8 @@
 index
+
+<%= link_to '投稿', new_item_path %>
+
+<% @items.each do |item| %>
+<%= item.title %>
+<%= item.opinion %>
+<% end %>
