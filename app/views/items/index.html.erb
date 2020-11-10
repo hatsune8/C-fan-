@@ -1,10 +1,25 @@
-index
+<div class="container">
+  <div class="row">
 
-<%= link_to '投稿', new_item_path %>
+    <div class="col-xs-4">
+      <%= render "items/genre" %>
+    </div>
 
-<% @items.each do |item| %>
-<%= item.title %>
-<%= item.opinion %>
-<%= link_to '詳細', item_path(item), class: 'btn btn-primary' %>
-<%= link_to '削除', item_path(item), method: :delete, class: 'btn btn-danger' %>
-<% end %>
+    <div class="col-xs-8">
+      <% if user_signed_in? %>
+      <%= link_to '投稿', new_item_path %>
+      <% end %>
+      <% @items.each do |item| %>
+      <%= item.title %>
+      <%= item.opinion %>
+      <%= link_to '詳細', item_path(item), class: 'btn btn-primary' %>
+      <%= link_to '削除', item_path(item), method: :delete, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+
+
+
+  </div>
+</div>
+
+

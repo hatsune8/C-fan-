@@ -1,0 +1,16 @@
+<header></header>
+
+<div class="header-list">
+<% if user_signed_in? %>
+  <li><%= link_to "my page", user_path(current_user) %></li>
+  <li><%= link_to "user", users_path %></li>
+  <li><%= link_to "favo♡", items_path %></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to "top", root_path %></li>
+  <li><%= link_to "about", about_path %></li>
+  <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+
+</div>

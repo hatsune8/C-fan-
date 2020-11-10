@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
     if @item.save
     redirect_to items_path
     end
@@ -36,7 +37,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-  params.permit(:title, :opinion)
+  params.require(:item).permit(:title, :opinion, :image)
   end
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CFan</title>
+    <title>C-Fan!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <%= render "homes/header" %>
+
+
+    <main>
     <%= yield %>
+    </main>
+
+
+    <%= render "homes/footer" %>
+
   </body>
 </html>
